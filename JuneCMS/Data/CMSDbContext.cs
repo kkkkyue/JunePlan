@@ -8,9 +8,11 @@ using JuneCMS.Models;
 
 namespace JuneCMS.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class CMSDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public DbSet<Article> Articles { get; set; }
+
+        public CMSDbContext(DbContextOptions<CMSDbContext> options)
             : base(options)
         {
         }

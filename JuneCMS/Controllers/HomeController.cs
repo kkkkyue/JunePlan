@@ -8,8 +8,14 @@ namespace JuneCMS.Controllers
 {
     public class HomeController : Controller
     {
+        JuneCMS.Data.CMSDbContext _context;
+        public HomeController(JuneCMS.Data.CMSDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
+            
             return View();
         }
 
